@@ -1,0 +1,91 @@
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  color: #f3e9ee;
+}
+
+.fondo {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  background: #150b14;
+}
+
+.bola {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.6;
+}
+
+.b1 {
+  width: 55vmax;
+  height: 55vmax;
+  background: radial-gradient(circle at 30% 30%, #e0526a, #b5384a, #7a1f3d);
+  animation: agua1 22s ease-in-out infinite;
+}
+
+.b2 {
+  width: 45vmax;
+  height: 45vmax;
+  background: radial-gradient(circle at 30% 30%, #ffb27a, #e8794a, #b8431f);
+  animation: agua2 28s ease-in-out infinite;
+}
+
+.b3 {
+  width: 60vmax;
+  height: 60vmax;
+  background: radial-gradient(circle at 30% 30%, #c46ab8, #7a2e6e, #3d1642);
+  animation: agua3 34s ease-in-out infinite;
+}
+
+@keyframes agua1 {
+  0% { transform: translate(-10vw, -10vh) scale(1); }
+  33% { transform: translate(50vw, 10vh) scale(1.2); }
+  66% { transform: translate(20vw, 50vh) scale(0.9); }
+  100% { transform: translate(-10vw, -10vh) scale(1); }
+}
+
+@keyframes agua2 {
+  0% { transform: translate(60vw, 50vh) scale(1.1); }
+  33% { transform: translate(10vw, 60vh) scale(0.9); }
+  66% { transform: translate(50vw, -10vh) scale(1.2); }
+  100% { transform: translate(60vw, 50vh) scale(1.1); }
+}
+
+@keyframes agua3 {
+  0% { transform: translate(30vw, 20vh) scale(0.9); }
+  33% { transform: translate(-10vw, 40vh) scale(1.2); }
+  66% { transform: translate(60vw, 30vh) scale(1); }
+  100% { transform: translate(30vw, 20vh) scale(0.9); }
+}
+
+/* ---------- Barra de desplazamiento ---------- */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0d060d;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2e1a2c;
+  border: 2px solid #0d060d;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ffb27a;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: #2e1a2c #0d060d;
+  }
+}
